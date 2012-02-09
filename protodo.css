@@ -1,0 +1,126 @@
+html { font-size: 100%; overflow-y: scroll; -webkit-overflow-scrolling: touch; -webkit-tap-highlight-color: rgba(0,0,0,0); -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+
+body { margin: 0; font-size: 13px; line-height: 1.231; }
+
+#app {
+	margin: 0 auto;
+	padding: 0;
+	width: 800px;
+}
+
+#newtask_area {
+	padding-top: 4px;
+	padding-bottom: 4px;	
+	text-align: center;
+	background-color: #444;
+}
+
+input {
+	margin: 0 auto;
+}
+
+#newtask {
+	border: 1px solid #B3B3B3;
+	color: #333;
+	text-shadow: 0 1px 0 white;
+	background: #F0F0F0;
+	background-image: -moz-linear-gradient(top,#eee,#ddd);
+	background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0,#eee),color-stop(1,#ddd));
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#eeeeee', EndColorStr='#dddddd')";
+	-webkit-rtl-ordering: logical;
+	-webkit-user-select: text;
+	position: relative;
+	width: 400px;
+	margin: 0 auto;
+	text-align: left;
+	font-size: 18px;
+	padding-left: 10px;
+	moz-border-radius: 1em;
+	-webkit-border-radius: 1em;
+	border-radius: 1em;
+	outline:none;
+}
+
+#tlist {
+	list-style: none;
+	margin:0;
+	padding:0;
+
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 16px;
+	font-style: normal;
+	font-variant: normal;
+}
+
+#tlist li {
+	margin: 0px;
+	padding: 0px;
+
+	border: 1px solid #CCC;
+	background: #FDFDFD;
+	font-weight: bold;
+	color: #111;
+	text-shadow: 0 1px 1px white;
+	background-image: -moz-linear-gradient(top,#eee,#fdfdfd);
+	background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0,#eee),color-stop(1,#fdfdfd));
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#eeeeee', EndColorStr='#fdfdfd')";
+	border-image: initial;
+}
+
+#tlist li .done_button, #tlist li h3, #tlist li h4 {
+	display: inline;
+
+}
+
+h3 {
+	overflow-y: hidden;
+	width: 400px;
+	display: inline;
+}
+
+h3 div {
+	margin-left: 0px;
+	font-weight: 500;
+	width: 400px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	display: inline;
+}
+
+h4 div {
+	float: right;
+	margin-top: 3px;
+	margin-right: 50px;
+	font-weight: 200;
+	display: inline;
+}
+
+.task_inner {
+	margin: auto auto;
+}
+
+.task_inner h3 {
+	margin-left: 10px;
+}
+
+.done_button {
+	width: 16px;
+	height: 16px;
+	margin-left: 10px;
+	float: left;
+	margin-top: 3px;
+	background-image: url("img/tick.png");
+	background-repeat: no-repeat;
+}
+
+.delete_button {
+	width: 16px;
+	height: 16px;
+	margin-right: 10px;
+	margin-left: auto;
+	float: right;
+	margin-top: 3px;
+	background-image: url(img/error.png);
+	background-repeat: no-repeat;
+}
