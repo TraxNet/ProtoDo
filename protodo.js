@@ -60,6 +60,9 @@ $script.ready( [ 'jquery', 'validate', 'infieldlabel', 'protoapi' ], function($)
 					return new Date(this.document.date);	
 				return undefined;
 			},
+			getDocument: function(){
+				return this.document;
+			}
 		};
 
 
@@ -134,7 +137,11 @@ $script.ready( [ 'jquery', 'validate', 'infieldlabel', 'protoapi' ], function($)
 			this.view = new TasksView( this );
 
 			// Configure protoapi.js
-			protoapi( { appid: "4f2b8c5d3dcd200e6900005e", appkey: "25b0aa7b3cde834b90ca30a15ed03b9c" } );
+			protoapi( { 
+				appid: '4f2ebbc700ac0fd23a00005e', 
+				appkey: 'ed756d6c2b62eecc9dcfcbeaf517edfb',
+				apiuri: 'http://localhost/api/1/objects/' // It's great to have ProtoAPI at localhost ;)
+			} );
 
 			this.fetchFromCloud();
 		}
@@ -181,14 +188,14 @@ $script.ready( [ 'jquery', 'validate', 'infieldlabel', 'protoapi' ], function($)
 
 				if( !avoid_save ){
 					task.setDate( new Date() );
-					protoapi( 'todos' ).save( task.document );
+					protoapi( 'todos' ).save( task.getDocument() );
 				}
 			},
 			/** Called by our View when user presses remove button on a task */
 			onTaskRemove: function( task ){
 				var index = this._tasks.indexOf( task );
 				this._tasks.splice( index, 1 );
-				protoapi( 'todos' ).delete( { _id: task._id } );
+				protoapi( 'todos' ).delete( { _id: task.getDocument()._id } );
 			},
 			/** Called by our View when user presses the 'done' button */
 			onTaskDone: function( task ){
